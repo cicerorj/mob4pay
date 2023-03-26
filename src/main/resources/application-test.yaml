@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: Mob4Pay
+  data:
+    mongodb:
+      port: 27017
+      repositories:
+        enabled: 'true'
+      host: localhost
+      password: root
+      username: root
+      database: test-database
+      authentication-database: admin
+  port: '8080'
+  cloud:
+    openfeign:
+      client:
+        config:
+          feignName:
+            connectTimeout: 5000
+            readTimeout: 5000
+            loggerLevel: full
+  main:
+    allow-bean-definition-overriding: true
+business:
+  openfeign:
+    api:
+      urls:
+        dummy-json: https://dummyjson.com
+        json-place-hold: https://jsonplaceholder.typicode.com
+        random-user: https://randomuser.me/api
